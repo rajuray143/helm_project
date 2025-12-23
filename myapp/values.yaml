@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: rajuray143/demo_spring_with_argo
-  tag: "5"
+  tag: "6"
   pullPolicy: Always
 
 service:
