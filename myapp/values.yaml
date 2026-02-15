@@ -1,8 +1,8 @@
 replicaCount: 2
 
 image:
-  repository: rajuray143/demo_spring_with_argo
-  tag: "6"
+  repository: 836822603650.dkr.ecr.ap-south-1.amazonaws.com/apps
+  tag: "latest"
   pullPolicy: Always
 
 service:
