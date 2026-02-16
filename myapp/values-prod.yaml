@@ -1,1 +1,27 @@
+replicaCount: 2
 
+image:
+  repository: 836822603650.dkr.ecr.ap-south-1.amazonaws.com/apps
+  tag: "latest"
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 9090
+serviceAccount:
+  create: true
+  name: myapp-sa
+
+ingress:
+  enabled: true
+  className: alb
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80
