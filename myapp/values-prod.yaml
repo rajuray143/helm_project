@@ -19,6 +19,11 @@ ingress:
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
+  hosts:
+    - host: myapp.company.com
+      paths:
+        - path: /
+          pathType: Prefix
 
 autoscaling:
   enabled: false
